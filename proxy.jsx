@@ -1,6 +1,6 @@
 /**
  * @file Mock Server
- * @author chenyiwen
+ * @author jinjiaxing
  * @date 16/12/05
  */
 var http = require('http');
@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === 'MOCK') {
 
 new Webpackdevserver(webpack(config), devServerConfig).listen(SERVER_PORT);
 
-http.createServer(function (proxyReq, proxyResp) {
+http.createServer(function(proxyReq, proxyResp) {
     var params = url.parse(proxyReq.url, true);
     if ('/mock' === params.pathname.substr(0, '/mock'.length)) {
         console.log(proxyReq.method, proxyReq.url);

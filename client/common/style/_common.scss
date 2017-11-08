@@ -3,7 +3,6 @@
 $btnPress_bgColor:#c3362a;
 $btnPress_color:rgba(255, 255, 255, 0.4);
 
-* { touch-action: none; }
 
 html {
   height: 100%;
@@ -20,6 +19,14 @@ body, #container {
   background-color: #F2F4F5;
 }
 
+html,body {
+  height: 100%;
+  //overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+::-webkit-scrollbar {display:none}
 
 .text-ellipsis {
   text-overflow: ellipsis;
@@ -103,3 +110,33 @@ div[data-reactroot] {
   align-items: center;
 }
 
+.title_container {
+  width: auto;
+  height: 2.325rem;
+  margin: 0 0.75rem;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  color: #333333;
+  .title {
+    padding: 1rem 0 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .link {
+    font-size: 0.6rem;
+    padding: 1.2rem 0 0.5rem;
+    display: flex;
+    .icon {
+      margin-left: 0.5rem;
+      width: 0.35rem;
+      height: 0.6rem;
+      background-image: url(../img/arrow.png);
+      background-size: 100% 100%;
+    }
+  }
+}
+
+.mglr {
+  margin: 0 0.75rem;
+}
